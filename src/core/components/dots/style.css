@@ -1,0 +1,25 @@
+:root {
+  --dotRightAnswer-bg: #FFF;
+  --dotWrongAnswer-bg: #000;
+}
+
+.dotWrongAnswer {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--dotWrongAnswer-bg);
+}
+
+.dotRightAnswer {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: var(--dotRightAnswer-bg);
+}
+
+.dots {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}

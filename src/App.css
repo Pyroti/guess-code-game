@@ -1,0 +1,12 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.appWin {
+  font-size: 30px;
+  height: 30px;
+}
