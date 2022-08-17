@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUserAnswerAction } from '../../redux/actions/mysteryNumbersAction'
 
@@ -7,6 +7,11 @@ const maxlenghtInput = 4
 const Input: React.FC = () => {
   const [inputValue, setInputValue] = useState<string>()
   const dispatch = useDispatch()
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
 
   const changeNumber = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
@@ -18,7 +23,14 @@ const Input: React.FC = () => {
     }
   }
 
-  return <input type="number" onChange={changeNumber} value={inputValue} />
+  return (
+    <input
+      type="number"
+      ref={inputRef}
+      onChange={changeNumber}
+      value={inputValue}
+    />
+  )
 }
 
 export default Input

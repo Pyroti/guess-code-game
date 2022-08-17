@@ -5,8 +5,8 @@ import Dots from './core/components/dots/dots'
 import Input from './core/components/input/input'
 import { setMysteryNumbersAnswerAction } from './core/redux/actions/mysteryNumbersAction'
 import { mysteryNumbersSelectorSelector } from './core/redux/selectors/mysteryNumbersSelector'
-import { checkAnswers } from './helpers/checkAnswer'
-import { makeMysteryNumbersAnswer } from './helpers/makeMysteryNumbersAnswer'
+import { checkAnswers } from './core/helpers/checkAnswer'
+import { makeMysteryNumbersAnswer } from './core/helpers/makeMysteryNumbersAnswer'
 
 const App: React.FC = () => {
   const { mysteryNumbersAnswer, userAnswer } = useSelector(

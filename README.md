@@ -41,14 +41,15 @@ Wrapping `Input` and `Result` in React.memo function is not necessary since we'r
 
 ### Folder structure
 
-- `components` - (includes `Dots` and `Input` components)
-- `helpers` - (includes all calculation functions that used in the game)
-- `store`
-  - `actions` - (for redux actions)
-  - `reducers` - (for app reducers and index.ts which exports rootReducer)
-  - `selectors` - (for selector functions)
-  - `types` - (for all types)
-  - `store.ts` - (exports `store` variable for redux `Provider`)
+- `core` - (includes `components`, `helpers` and `redux` folders)
+  - `components` - (includes `Dots` and `Input` components)
+  - `helpers` - (includes all calculation functions that used in the game)
+  - `redux`
+    - `actions` - (for redux actions)
+    - `reducers` - (for app reducers and index.ts which exports rootReducer)
+    - `selectors` - (for selector functions)
+    - `types` - (for all types)
+    - `store.ts` - (exports `store` variable for redux `Provider`)
 
 #### App includes four components
 
@@ -64,13 +65,13 @@ It sets the digit code which is generated randomly using `makeMysteryNumbersAnsw
 
 If the `mysteryNumbersAnswer` and `userAnswer` are equal then the text appears `You win`
 
-##### `src/components/input/input.tsx`
+##### `src/core/components/input/input.tsx`
 
 Renders controlled `input` and take `answer` variable from `store` to show inserted answer
 
 Fires `updateAnswer` action on each `onChange` event, map this value using `castStringToNumberArray` helper
 
-#### `src/components/dots/dots.tsx`
+#### `src/core/components/dots/dots.tsx`
 
 Renders a list with dots mapped form `mysteryNumbersAnswer` and `userAnswer` from `store`
 
